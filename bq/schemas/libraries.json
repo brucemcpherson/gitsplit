@@ -1,0 +1,66 @@
+[
+  {
+    "name": "loadId",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "userSymbol",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "libraryId",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "versions",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "referencers",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "gqlId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repoId",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "ownerId",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "source",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "gqlId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repoId",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "ownerId",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ]
+  }
+]

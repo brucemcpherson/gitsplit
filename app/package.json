@@ -1,0 +1,19 @@
+{
+  "name": "minscr",
+  "version": "1.0.1",
+  "description": "get gas files from git",
+  "main": "gitsplit.mjs",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "delay": "^6.0.0",
+    "glob": "^10.3.10",
+    "load-json-file": "^7.0.1",
+    "octokit": "^3.1.2",
+    "write-json-file": "^5.0.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

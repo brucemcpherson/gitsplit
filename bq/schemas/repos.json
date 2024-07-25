@@ -1,0 +1,100 @@
+[
+
+  {
+    "name": "ownerId",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "loadId",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "login",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nameWithOwner",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "gassyFiles",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "manifests",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "filesAnalyzed",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "stargazerCount",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "watchers",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "description",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ref",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "createdAt",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED"
+  },
+
+  {
+    "name": "updatedAt",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "pushedAt",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "sshUrl",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "url",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "homepageUrl",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,134 @@
+[
+
+  {
+    "name": "repoId",
+    "type": "INTEGER",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "loadId",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gqlId",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+
+  {
+    "name": "path",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+
+  {
+    "name": "libraryId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "claspId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "infoId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "scriptId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "userSymbol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "content",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "dataStudio",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          { "name": "name", "type": "STRING", "mode": "NULLABLE" },
+          { "name": "company", "type": "STRING", "mode": "NULLABLE" },
+          { "name": "logoUrl", "type": "STRING", "mode": "NULLABLE" },
+          { "name": "supportUrl", "type": "STRING", "mode": "NULLABLE" },
+          { "name": "description", "type": "STRING", "mode": "NULLABLE" },
+          { "name": "sources", "type": "JSON", "mode": "NULLABLE" },
+          { "name": "addOnUrl", "type": "JSON", "mode": "NULLABLE" },
+          { "name": "authType", "type": "JSON", "mode": "NULLABLE" }
+        ]
+      },
+      { "name": "timeZone", "type": "STRING", "mode": "NULLABLE" },
+      {
+        "name": "dependencies",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "libraries",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              { "name": "userSymbol", "type": "STRING", "mode": "NULLABLE" },
+              { "name": "libraryId", "type": "STRING", "mode": "NULLABLE" },
+              { "name": "version", "type": "STRING", "mode": "NULLABLE" },
+              {
+                "name": "developmentMode",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE"
+              }
+            ]
+          },
+          {
+            "name": "enabledAdvancedServices",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              { "name": "userSymbol", "type": "STRING", "mode": "NULLABLE" },
+              { "name": "serviceId", "type": "STRING", "mode": "NULLABLE" },
+              { "name": "version", "type": "STRING", "mode": "NULLABLE" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "webapp",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          { "name": "executeAs", "type": "STRING", "mode": "NULLABLE" },
+          { "name": "access", "type": "STRING", "mode": "NULLABLE" }
+        ]
+      },
+
+      { "name": "exceptionLogging", "type": "STRING", "mode": "NULLABLE" },
+      { "name": "runtimeVersion", "type": "STRING", "mode": "NULLABLE" },
+      {
+        "name": "executionApi",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [{ "name": "access", "type": "STRING", "mode": "NULLABLE" }]
+      },
+      { "name": "chat", "type": "JSON", "mode": "NULLABLE" },
+      {
+        "name": "sheets",
+        "type": "JSON",
+        "mode": "NULLABLE"
+      },
+      { "name": "oauthScopes", "type": "STRING", "mode": "REPEATED" },
+      { "name": "addOns", "type": "JSON", "mode": "NULLABLE" },
+      { "name": "urlFetchWhitelist", "type": "STRING", "mode": "REPEATED" },
+      { "name": "macros", "type": "JSON", "mode": "NULLABLE" }
+    ]
+  }
+]
