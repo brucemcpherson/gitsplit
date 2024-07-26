@@ -1,4 +1,7 @@
 import { isManifest } from "./getmanifests.mjs";
+
+// note there is post processing of this in libfix
+// leaving this here for now but much of it will be discarded when libfix is run on it
 export const getLibraries = ({ gasRepoMap }) => {
   // we have to try to establish which of these scripts are libraries
   // a file id map of manifest files indexed by gqlId
