@@ -19,13 +19,15 @@ DS="gassypedia"
 COLLECTIONS=(
  'libraries' 'files' 'owners' 'repos'
 )
+
 GOOD=0
 BAD=0
-TEMP=$(mktemp)
+
 for c in "${COLLECTIONS[@]}"
 do
   echo ""
   echo "----working on collection ${c}----"
+  TEMP=$(mktemp)
 
   # convert to ndjson and split into separate tables
 cat "${JSON}"  | \
@@ -58,10 +60,10 @@ cat "${JSON}"  | \
     echo "...finished on collection ${c}"
     let "GOOD++"
   fi
-
+  rm ${TEMP}
 done
 
-rm ${TEMP}
+
 echo ""
 echo "----all done----"
 echo "loaded ${GOOD} from ${#COLLECTIONS[@]} collections from scrgit to bigquery"

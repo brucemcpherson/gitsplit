@@ -106,8 +106,8 @@ const getRepos = async ({ login, client, cProxy, rp }) => {
       };
     }
 
-    // extract interestin gql response fields
-    const { repositoryOwner } = result;
+    // extract interestin gql response field s
+    const { repositoryOwner } = result || {};
     if (!repositoryOwner) {
       console.log(
         "failed to find repo owner in gql result for",
