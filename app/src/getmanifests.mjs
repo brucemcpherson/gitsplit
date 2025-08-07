@@ -5,7 +5,7 @@ const {multiGet} = cache
 
 const boringTrees = [
   new RegExp(/(\/|^)dist(\/|$)/),
-  new RegExp(/(\/|^)build(\/|$)/),
+  //new RegExp(/(\/|^)build(\/|$)/),
   new RegExp(/(\/|^)libraries(\/|$)/),
   new RegExp(/(\/|^)node_modules(\/|$)/),
   new RegExp(/(\/|^)helm(\/|$)/),

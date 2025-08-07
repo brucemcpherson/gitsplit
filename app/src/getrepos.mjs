@@ -27,10 +27,10 @@ export const getRepoMap = async ({ client, ownerMap, cProxy, rp }) => {
     (seeds.data || []).forEach((f) => {
 
       if (repoMap.has(f.id)) {
-        const g= repoMap.get(f.id)
+        const g = repoMap.get(f.id)
         console.log(`unexpected dup repo`, f.id);
-        console.log('trying to add', f.id,f.url,f.createdAt,f.login,f.ownerId)
-        console.log('already have',g.id, g.url,g.createdAt,g.login,g.ownerId )
+        console.log('trying to add', f.id, f.url, f.createdAt, f.login, f.ownerId)
+        console.log('already have', g.id, g.url, g.createdAt, g.login, g.ownerId)
         console.log('...skipping')
 
       } else {
@@ -89,21 +89,30 @@ const getRepos = async ({ login, client, cProxy, rp }) => {
 
     // get the owner and repo data
     let result;
-    try {
-      result = await client.graphql(gqlGetRepos, {
-        ...variables,
-      });
-    } catch (err) {
-      console.error(
-        "gql error",
-        err.status,
-        "on get repos for",
-        login,
-        "skipping the rest"
-      );
-      return {
-        data: allData,
-      };
+    let att = 0
+    const matt =3
+    while (att < matt && !result) {
+      att++
+      try {
+        result = await client.graphql(gqlGetRepos, {
+          ...variables,
+        });
+      } catch (err) {
+        console.error(
+          "gql error",
+          err.status,
+          "on get repos for",
+          login,
+          att < matt ? "skipping the rest": "trying again"
+        );
+        return {
+          data: allData,
+        };
+      }
+      if (!result) {
+        console.log ('...failed result on owner ',login, 'attempt', att)
+      }
+
     }
 
     // extract interestin gql response field s
